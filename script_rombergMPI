@@ -1,0 +1,20 @@
+# !/bin/csh
+#PBS -N PPrombergMPI
+#PBS -l nodes=12:ppn=8               
+
+cd /home/iresh/PP_Project               # Direct it to your current working directory
+
+printf "1 processors\n";
+mpirun -np 1 -hostfile $PBS_NODEFILE ./PPrombergMPI.out
+printf "8 processors\n";
+mpirun -np 8 -hostfile $PBS_NODEFILE ./PPrombergMPI.out
+printf "16 processors\n";
+mpirun -np 16 -hostfile $PBS_NODEFILE ./PPrombergMPI.out
+printf "32 processors\n";
+mpirun -np 32 -hostfile $PBS_NODEFILE ./PPrombergMPI.out
+printf "64 processors\n";
+mpirun -np 64 -hostfile $PBS_NODEFILE ./PPrombergMPI.out
+printf "96 processors\n";
+mpirun -np 96 -hostfile $PBS_NODEFILE ./PPrombergMPI.out
+printf "\n";
+
